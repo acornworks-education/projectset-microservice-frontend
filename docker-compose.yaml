@@ -8,5 +8,10 @@ services:
     ports:
       - "61080:80"
 
+networks:
+  default:
+    name: projectset
+    external: true
+
 
 
