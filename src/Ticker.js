@@ -7,7 +7,7 @@ function Ticker() {
     const [ loaded, setLoaded ] = useState(false);
     const [ ticker, setTicker ] = useState('');
     const [ name, setName ] = useState('');
-    const urlPrefix = !!process.env.REACT_APP_ENDPOINT ? process.env.REACT_APP_ENDPOINT : 'http://localhost:65080';
+    const urlPrefix = !!window.__RUNTIME_CONFIG__.REACT_APP_ENDPOINT ? window.__RUNTIME_CONFIG__.REACT_APP_ENDPOINT : 'http://localhost:65080';
 
     const getTickerList = () => {
         fetch(`${urlPrefix}/ticker/list`).then((resp) => resp.json()).then(data => {

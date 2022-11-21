@@ -6,7 +6,7 @@ import { ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 
 function Strategy() {
     const [ tickers, setTickers ] = useState([]);
     const [ loaded, setLoaded ] = useState(false);
-    const urlPrefix = !!process.env.REACT_APP_ENDPOINT ? process.env.REACT_APP_ENDPOINT : 'http://localhost:65080';
+    const urlPrefix = !!window.__RUNTIME_CONFIG__.REACT_APP_ENDPOINT ? window.__RUNTIME_CONFIG__.REACT_APP_ENDPOINT : 'http://localhost:65080';
     const [ price, setPrice ] = useState(0);
     const [ chartWidth, setChartWidth ] = useState(500);
     const [ currentStrategy, setCurrentStrategy ] = useState('ADX');

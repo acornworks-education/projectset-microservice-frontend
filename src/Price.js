@@ -5,7 +5,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 function Price() {
     const [ tickers, setTickers ] = useState([]);
     const [ loaded, setLoaded ] = useState(false);
-    const urlPrefix = !!process.env.REACT_APP_ENDPOINT ? process.env.REACT_APP_ENDPOINT : 'http://localhost:65080';
+    const urlPrefix = !!window.__RUNTIME_CONFIG__.REACT_APP_ENDPOINT ? window.__RUNTIME_CONFIG__.REACT_APP_ENDPOINT : 'http://localhost:65080';
     const [ price, setPrice ] = useState(0);
     const [ historicalPrices, setHistoricalPrices ] = useState([]);
     const [ chartWidth, setChartWidth ] = useState(500);
